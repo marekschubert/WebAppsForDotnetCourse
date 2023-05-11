@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table with span</title>
+</head>
+<body>
+    <h1>Example with span</h1>
+    <p>Text before table.</p>
+    <table border="1">
+        <caption>Table with span</caption>
+        <thead> 
+            <tr>
+                <th  colspan="5">Main header</th>
+            </tr>
+            <tr>
+                <th>Col 1</th><th>Col 2</th><th>Col 3</th>
+                <th>Col 4</th><th>Col 5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td  colspan="2" rowspan="2"> 2 x 2 </td>
+                <td colspan="3">Horizontal block</td>
+            </tr>
+            <tr>
+                <td>Text A</td>
+                <td rowspan="2">Vertical block</td>
+                <td>Text B</td>
+            </tr>
+            <tr>
+                <td>Text C</td><td>Text D</td>
+                <td>Text E</td><td>Text F</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Text after table.</p>
+</body>
+</html>

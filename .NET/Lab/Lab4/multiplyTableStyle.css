@@ -1,0 +1,22 @@
+.tableHeader {
+    font-weight: 700;
+    background-color: yellow;
+}
+
+.even {
+    background-color: #00ffff;
+}
+
+.odd {
+    background-color: pink;
+}
+
+td {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+}
+
+canvas {
+    border-style: solid;
+}

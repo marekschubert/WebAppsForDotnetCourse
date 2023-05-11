@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex form</title>
+</head>
+<body>
+    <h1>Complex form</h1>
+    <p>Please fill the form:</p>
+    <!-- <form method="post" action="superweb.mydomain.com/userinfo.html"> -->
+    <form method="post" action="http://localhost:5500/SimpleForm.html">
+    <p>
+        <textarea name="descr" cols="30" rows="3">Short desciption</textarea>
+    </p>
+    <p>
+        <label for="idPass">Password:</label>
+        <input id="idPass" name="Name" type="password" size="30" maxlength="50">
+    </p>
+    <p>
+        <label>What elements you know?:</label>
+        <label><input name="knowledge" type="checkbox" value="html5" checked>HTML 5</label>
+        <label><input name="knowledge" type="checkbox" value="css3">CSS 3</label>
+        <label><input name="knowledge" type="checkbox" value="js">JavaScript</label>
+    </p>
+    <p>
+        <label>How would you rate your OOP knowledge?:</label>
+        <label><input name="oop" type="radio" value="grade5">5</label>
+        <label><input name="oop" type="radio" value="grade4"  checked>4</label>
+        <label><input name="oop" type="radio" value="grade3">3</label>
+    </p>
+    <p>
+        <label>How would you rate this course?
+            <select name="course">
+                <option>Excellent</option>
+                <option>Good</option>
+                <option value="canbe">Can be</option>
+                <option>Bad & worse</option>
+                <option value="0">Horrible</option>
+            </select>
+        </label>
+    </p>
+    <p>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </p>
+    </form>
+</body>
+</html>

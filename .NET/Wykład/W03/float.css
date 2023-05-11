@@ -1,0 +1,13 @@
+section {
+    background-color: bisque;
+}
+.image-left{
+    float:left;
+    text-align: center;
+    margin:10px;
+}
+.image-right{
+    float:right;;
+    text-align: center;
+    margin:10px;
+}

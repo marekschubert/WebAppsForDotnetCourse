@@ -1,0 +1,14 @@
+p {
+    background-color: bisque;
+}
+#menu img{
+    height: 80%;
+}
+#menu{
+    position: fixed;
+    background-color: yellow;
+    top:10px;
+    left:30px;
+    height: 80px;
+    width: 80%;
+}

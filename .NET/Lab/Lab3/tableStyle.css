@@ -1,0 +1,6 @@
+table, th, td {
+    border: 2px dashed;
+    width: 50%;
+    height: 50px;
+    border-color: red;
+  }

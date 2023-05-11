@@ -1,0 +1,33 @@
+p{
+    font-weight: 800;
+}
+
+section{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: beige;
+    color:#0430FF;
+}
+
+footer{
+    background-color:hsl(200,90%,90%)
+}
+
+h1{
+    color:red;
+}
+
+.through{
+    text-decoration: line-through;
+}
+
+.background{
+    background-color: aqua;
+}
+
+.big{
+    font-size: 300%;
+}
+
+.font{
+    font-family: 'Arial';
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datalist</title>
+</head>
+<body>
+   <h1>Datalist</h1>
+   <form method="post" action="http://localhost:5500/SimpleForm.html">
+    <p>
+   <label for="flower-choice">Choose a flover:</label>
+   <input list="flowers" id="flower-choice" name="FlowerChoice" 
+   placeholder="flower's name">
+   
+   <datalist id="flowers">
+       <option value="Brugmansia">
+       <option value="Rose">
+       <option value="Tulip">
+       <option value="Pansy">
+       <option value="Azalea">
+   </datalist>
+    </p>
+   <p>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Clear">
+</p>
+    </form>
+</body>
+</html>

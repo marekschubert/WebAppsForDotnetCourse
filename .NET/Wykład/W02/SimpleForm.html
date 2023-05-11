@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple form</title>
+</head>
+<body>
+    <h1>Simple form</h1>
+    <p>Please fill the form:</p>
+    <!-- <form method="post" action="superweb.mydomain.com/userinfo.html"> -->
+    <form method="post" action="http://localhost:5500/SimpleForm.html">
+    <input type="hidden" name="securityCode" value="DE79W23">
+    <p>
+        <label for="idName">Name:</label>
+        <input id="idName" name="Name" type="text" size="30" maxlength="50">
+    </p>
+    <p>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </p>
+    </form>
+</body>
+</html>

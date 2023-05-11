@@ -1,0 +1,12 @@
+p {
+    font-size: 15px;
+}
+.important{
+    color:red;
+}
+#bottom{
+    font-weight: 800;
+}
+:hover{
+    background-color: yellow;
+}

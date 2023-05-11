@@ -1,0 +1,10 @@
+section  p{
+    color:green;
+}
+section > p{
+    background-color: yellow;
+}
+
+p.important.hard{
+    font-size: larger;
+}

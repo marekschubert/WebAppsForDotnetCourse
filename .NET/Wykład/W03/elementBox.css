@@ -1,0 +1,23 @@
+p {
+    background-color: bisque;
+}
+div {
+    height: 80px;
+    width: 100px;
+    background-color:yellow;
+} 
+
+.outer{
+    height: 200px;
+    width: 300px;
+    background-color:blue;
+}
+
+.d1{
+    margin:50px 80px 100px 20px;
+    border-color: aquamarine;
+    border-width: 5px 15px 20px 30px;
+    border-style: solid;
+    padding: 30px;    
+}
+

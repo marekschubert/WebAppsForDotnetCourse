@@ -1,0 +1,28 @@
+body{
+    background-image: url("bergenia.jpg ");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}
+p {
+    background-color: bisque;
+}
+div {
+    height: 80px;
+    width: 100px;
+    background-color:yellow;
+} 
+
+.outer{
+    height: 200px;
+    width: 300px;
+    background-image: url("star.png");
+}
+
+.d1{
+    border: 15px solid aqua;
+
+    padding: 30px; 
+    background-image: url("star.png");      
+}
+

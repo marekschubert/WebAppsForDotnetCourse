@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="multiplyTableStyle.css">
+    <script src="eventInfo.js"></script>
+    <title>Key events</title>
+</head>
+<body>
+    <h1>Generowanie tablicy</h1>
+    <p id="p1">
+        <label>Input: <input id="myInput" type="text" name="name"></label> <button onclick="createTable()">Generuj tablicę</button>
+    </p>
+    <table id="multiplyTable"></table>
+
+    <h1>Canvas</h1>
+    <canvas width="500" height="200"></canvas>
+    <canvas width="400" height="100"></canvas>
+    <canvas width="500" height="200"></canvas>
+
+    <p id="info"></p>
+
+    <script>
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min) ) + min;
+        }
+
+        function calc(table, i, j){
+            return table.rows[0].cells[j].innerHTML * table.rows[i].cells[0].innerHTML;
+        }
+
+        function createTable(){
+            var newTable = document.getElementById('multiplyTable');
+            newTable.innerHTML="";
+
+            var input = document.getElementById("myInput")
+
+            if(input.value < 5 || input.value > 20){
+                window.alert("Liczba spoza zakresu 5 - 20, przyjęto domyślną wartość 10");
+                input.value = 10;
+            }
+
+            var newTableBody = document.createElement("tbody");
+
+            newTable.appendChild(newTableBody);
+            
+            var row = document.createElement("tr");
+
+            cell = document.createElement("td");
+            cell.setAttribute("class", "tableHeader");
+            row.appendChild(cell);
+
+            for (let j = 1; j < parseInt(input.value)+1; j++) {
+                cell = document.createElement("td");
+                cell.setAttribute("class", "tableHeader");
+                cellText = document.createTextNode(getRndInteger(1,99));
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            }
+
+            newTableBody.appendChild(row);
+
+            for (let i = 1; i < parseInt(input.value)+1; i++) {
+                row = document.createElement("tr");
+
+                newTableBody.appendChild(row);
+
+                cell = document.createElement("td");
+                cell.setAttribute("class", "tableHeader");
+                row.appendChild(cell);
+                cellText = document.createTextNode(newTable.rows[0].cells[i].innerHTML);
+                cell.appendChild(cellText);
+
+                for (let j = 1; j < parseInt(input.value)+1; j++) {
+                    cell = document.createElement("td");
+                    row.appendChild(cell);
+                    cellText = document.createTextNode(calc(newTable, i, j));
+                    if(parseInt(cellText.data)%2 == 0){
+                        cell.setAttribute("class", "even");
+                    }
+                    else{                        
+                        cell.setAttribute("class", "odd");
+                    }
+                    cell.appendChild(cellText);
+                }
+            }
+            newTable.setAttribute("border", "2");
+        }
+
+        var allCanvas = document.getElementsByTagName("canvas");
+
+        for (const canva of allCanvas) {
+            canva.addEventListener('mousemove', function (e) {
+                var loc = getMousePos(canva, e);
+
+                canva.getContext("2d").clearRect(0,0,canva.width,canva.height);
+
+                drawGuidelines(canva.getContext("2d"), loc.x, loc.y);
+            })
+
+            canva.addEventListener('mouseout', function (e) {
+                canva.getContext("2d").clearRect(0,0,canva.width,canva.height);                
+            })
+        }
+
+        function getMousePos(canva, evt) {
+            var rect = canva.getBoundingClientRect();
+            return {
+                x: evt.clientX - rect.left,
+                y: evt.clientY - rect.top
+            };
+        }
+
+        function drawGuidelines(context, x, y) {
+            context.strokeStyle = 'rgba(0,0,230,0.8)';
+            context.lineWidth = 0.5;
+            //drawToLeftTop(context, x,y);
+            //drawToLeftBottom(context, x,y);
+            //drawToRightTop(context, x,y);
+            //drawToRightBottom(context, x,y);
+
+            drawVerticalLine(context,x);
+            drawHorizontalLine(context,y);
+        }
+
+        function drawToLeftTop (context, x,y) {
+            context.beginPath();
+            context.moveTo(0, 0);
+            context.lineTo(x, y);
+            context.stroke();
+        }
+        
+        function drawToLeftBottom (context, x,y) {
+            context.beginPath();
+            context.moveTo(0, context.canvas.height);
+            context.lineTo(x, y);
+            context.stroke();
+        }
+        
+        function drawToRightTop (context, x,y) {
+            context.beginPath();
+            context.moveTo(context.canvas.width, 0);
+            context.lineTo(x, y);
+            context.stroke();
+        }
+        
+        function drawToRightBottom (context, x,y) {
+            context.beginPath();
+            context.moveTo(context.canvas.width, context.canvas.height);
+            context.lineTo(x, y);
+            context.stroke();
+        }
+
+        function drawVerticalLine (context,x) {
+            context.beginPath();
+            context.moveTo(x, 0);
+            context.lineTo(x, context.canvas.height);
+            context.stroke();
+        }
+
+        function drawHorizontalLine (context,y) {
+            context.beginPath();
+            context.moveTo(0,y);
+            context.lineTo(context.canvas.width, y);
+            context.stroke();
+        }
+        
+    </script>
+</body>
+</html>

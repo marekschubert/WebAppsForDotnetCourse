@@ -1,0 +1,7 @@
+p {
+    width: 500px;
+    margin-left: 50px;
+    border-width: 20px;
+    border-color: yellow;
+    border-style: dashed;
+}

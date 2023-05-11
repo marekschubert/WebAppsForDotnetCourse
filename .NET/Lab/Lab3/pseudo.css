@@ -1,0 +1,28 @@
+
+a:link {
+    color: #0000FF;
+  }
+  
+
+  a:visited {
+    color: #fffb00;
+  }
+  
+
+  a:hover {
+    color: #FF0000;
+  }
+  
+
+  a:active {
+    color: #00FF00;
+  }
+
+p::first-line {
+    color: #0400ff;
+    font-variant: small-caps;
+  }
+
+p::before {
+    content: url(kot.jpg);
+  }

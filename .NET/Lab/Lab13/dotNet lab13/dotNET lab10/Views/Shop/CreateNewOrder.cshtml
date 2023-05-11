@@ -1,0 +1,98 @@
+﻿@model IEnumerable<CartArticleViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@{
+    var sum = 0D;
+}
+@{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article.Image)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                sum += item.Quantity * item.Article.Price;
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Article.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Article.Price)
+                    </td>
+                    <td>
+                        <img src="~/@item.Article.Image" alt="@item.Article.Image" heigth="100" width="100">
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Article.Category.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>
+        Suma: @sum
+    </p>
+
+    <form method="post">
+        <label>Imię i nazwisko:</label>
+        <input type="text" name="fullName" />
+        <br />
+
+        <label>Ulica:</label>
+        <input type="text" name="street" />
+        <br />
+
+        <label>Kod pocztowy:</label>
+        <input type="text" name="postalCode" />
+        <br />
+
+        <label>Miasto:</label>
+        <input type="text" name="city" />
+        <br />
+
+        <label>Telefon:</label>
+        <input type="tel" name="phoneNumber" />
+        <br />
+
+        <label>Dostawa:</label>
+        <select name="deliveryOptions">
+            <option value="standard">Kurier</option>
+            <option value="box">Paczkomat</option>
+        </select>
+        <br />
+
+        <label>Płatność:</label>
+        <select name="paymentOptions">
+            <option value="creditCard">Karta kredytowa</option>
+            <option value="blik">BLIK</option>
+        </select>
+        <br />
+
+        <input type="submit" value="Potwierdź zamówienie" />
+    </form>
+}

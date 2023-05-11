@@ -1,0 +1,22 @@
+section {
+    background-color: bisque;
+}
+.image-left{
+    float:left;
+    margin:10px;
+}
+.image-right{
+    float:right;;
+    margin:10px;
+}
+
+#div1{
+    color:blue;
+}
+#div2{
+    display:block; /* display:block; */
+    color:red;
+}
+div3{
+    color:green;
+}

@@ -1,0 +1,19 @@
+section {
+    background-color: aqua;
+}
+
+section p {
+    background-color: blue;
+}
+
+section > p {
+    background-color: brown;
+}
+
+.p1 {
+    background-color: blueviolet;
+}
+
+#idp1 {
+    background-color: chartreuse;
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Marek Schubert">
+    <meta name="keywords" content="test html file, lists, forms">
+    <meta name="description" content="HTML5 file to test its basic elements.">
+    <meta name = "revised" content = "Marek Schubert, 15.10.2022" />
+    <title>.NET lab 2 HTML Page</title>
+    <style>
+        h1 {
+        color:rgb(0, 255, 60)
+        }
+        p {
+        font-size: 10px;
+        color:rgb(229, 255, 0)
+        }
+        </style>
+</head>
+<body>
+    <header id="idBeginning">
+        <nav>
+            <ul>
+                <li><h1>Linki wewnętrzne:</h1></li>
+                <li>
+                    <p>
+                    <a href="#idBeginning">Link do początku strony</a><br>  
+                    <a href="#idFormat">Link do formatowania tekstu</a><br>
+                    <a href="#idBigList">Link do listy zagnieżdżonej</a><br>
+                    <a href="#idTable">Link do tabeli</a><br>  
+                    <a href="#idForm">Link do formularza</a><br>    
+                    </p>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <p style="background-color: red;">CSS - inline style</p>
+
+    <main>
+        <h1> Znaki specjalne:</h1>
+        <p>
+            Copyright &copy; <br>
+            Phone &phone; <br>
+            Registered &reg; <br>
+            Quote &quot; <br>
+            Trademark &trade;
+        </p>  
+
+        <h1 id="idFormat">Foramtowanie tekstu: </h1>
+        <p>
+            <strong>Ważny, pogrubiony tekst (strong)</strong> <br>
+            <em>Tekst z pochyłą czcionką (em)</em> <br>
+            Indeks górny (sup): 3<sup>2</sup>=9 <br>
+            <small>Mniejsza czcionka (small)</small> <br>
+            <del>Przekreślony tekst (del)</del>
+        </p>
+
+        <section id="idLists">
+            <h1>Lista uporządkowana:</h1>
+            <ol>
+                <li>Pierwszy element</li>
+                <li>Drugi element</li>
+                <li>Trzeci element</li>
+                <li>Czwarty element</li>
+                <li>Piąty element</li>    
+            </ol>
+
+            <h1>Lista nieuporządkowana:</h1>
+            <ul>
+                <li>Element listy 1</li>
+                <li>Element listy 2</li>
+                <li>Element listy 3</li>
+                <li>Element listy 4</li>
+                <li>Element listy 5</li>
+            </ul>
+
+            <h1>Lista definicji:</h1>
+            <dl>
+                <dt>Tytuł definicji (dt)</dt>
+                <dd>Właściwa definicja/opis (dd)</dd>
+                <dt>Definicja </dt>
+                <dd>Wypowiedź o określonej budowie, w której informuje się o znaczeniu pewnego wyrażenia przez wskazanie innego wyrażenia oddającego sens sformułowania.</dd>
+            </dl>
+
+            <h1 id="idBigList">Lista zagnieżdżona:</h1>
+            <ul>
+                <li>
+                    Punkt 1.1
+                </li>
+                <li>
+                    Punkt 1.2
+                    <ol>
+                        <li>
+                            Punkt 2.1
+                            <ol>
+                                <li>
+                                    Punkt 3.1
+                                    <ul>
+                                        <li>
+                                            Punkt 4.1
+                                        </li>
+                                        <li>
+                                            Punkt 4.2
+                                        </li>
+                                    </ul>  
+                                </li>
+                                <li>
+                                    Punkt 3.2
+                                </li>
+                                <li>
+                                    Punkt 3.3
+                                </li>                    
+                            </ol>
+                        </li>
+                        <li>
+                            Punkt 2.2
+                        </li>
+                        <li>
+                            Punkt 2.3
+                            <ol>
+                                <li>
+                                    Punkt 3.4
+                                    <ul>
+                                        <li>
+                                            Punkt 4.3
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Punkt 3.5
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            Punkt 2.4
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Punkt 1.2
+                </li>
+            </ul>
+        </section>
+
+        <h1 id="idTable">Tabela:</h1>
+        <table border="3">
+            <caption>Nazwa tabeli</caption>
+            <thead>
+                <tr>
+                <th colspan="5">Nagłówek tabeli</th>
+                </tr>
+                <tr>
+                <th>1</th><th>2</th><th>3</th>
+                <th>4</th><th>5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="5">1x5</td>
+                    <td colspan="4">4x1</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">1x4</td>
+                    <td colspan="3">3x1</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">1x3</td>
+                    <td colspan="2">2x1</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">1x2</td>
+                    <td>1x1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>I</td>
+                    <td colspan="3">Tekst w stopce</td>
+                    <td>J</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h1 id="idForm" >Formularz:</h1>
+        <form method="post" action="http://localhost:5500/SimpleForm.html">
+            <p>
+                <label for="idName">Name:</label>
+                <input id="idName" name="Name" type="text" size="30" maxlength="50">
+            </p>
+            <p>
+                <label for="idSurname">Surame:</label>
+                <input id="idSurname" name="Surname" type="text" size="30" maxlength="50">
+            </p>
+            <p>
+                <label for="idTextarea">Textarea:</label>
+                <textarea name="Textarea" id="idTextarea" cols="30" rows="10"></textarea>
+            </p>
+            <p>
+                <label for="idPassword">Password:</label>
+                <input type="password" name="Password" id="idPassword">
+            </p>
+            <p>
+                <label for="idCheckbox1">Checkboxes:</label><br>
+                <input type="checkbox" name="Checkbox" id="idCheckbox1">Checkbox 1<br>
+                <input type="checkbox" name="Checkbox" id="idCheckbox2">Checkbox 2<br>
+                <input type="checkbox" name="Checkbox" id="idCheckbox3">Checkbox 3<br>
+            </p>
+            <p>
+                <label>Radio buttons:</label><br>
+                <input type="radio" name="radio" id="idRadio1" value="male">Male<br>
+                <input type="radio" name="radio" id="idRadio2" value="male">Female<br>
+                
+            </p>
+            <p>
+                <input type="file">
+            </p>
+            <p>
+                <select name="selectList">
+                    <option>ABC</option>
+                    <option>DEF</option>
+                    <option>GHI</option>
+                </select>
+            </p>
+            <p>
+                <input type="date">
+            </p>
+            <p>
+                <input type="time">
+            </p>
+            <p>
+                <input type="range">
+            </p>
+
+            <p>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+            </p>
+        </form>
+
+        <h1>Lorem ipsum:</h1>
+        <article id="idLoremArticle">
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus consequatur iusto, labore amet debitis provident rem similique deserunt aperiam aliquid quae sed at? Illo, dolorum nesciunt? Aliquam magnam nesciunt, sint sapiente labore, enim sunt sit a neque maiores quis voluptates earum ex ut, nostrum unde ab ratione pariatur? Perspiciatis impedit, dolores possimus ullam quos corrupti placeat amet odit labore dolorem quisquam, fugiat, sunt molestias consequatur reiciendis consequuntur. Nesciunt provident, asperiores ex mollitia eos quod error quisquam reprehenderit omnis alias dolores ducimus consequatur corporis labore dolorem adipisci reiciendis dolore dicta molestias, laboriosam vitae illo, quibusdam ipsum quo. Quas rerum sapiente autem repellendus facere mollitia repellat vero hic, voluptas quidem, ipsum amet, ea atque fugiat non omnis assumenda debitis. Numquam adipisci soluta nisi id amet tenetur enim assumenda laborum doloribus? Placeat minus quo saepe distinctio quod? Cupiditate doloremque voluptatem eum a ipsa vero! Sit fugiat repudiandae quae odio labore eum quam reprehenderit.
+            </p>
+        </article>
+
+        <table border="3">
+            <caption>Nazwa tabeli</caption>
+            <thead>
+                <tr>
+                    <th colspan="4"><a href="https://onet.pl">www.onet.pl</a></th>
+                    <th>A</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>B</td><td>C</td><td>D</td>
+                    <td colspan="2" rowspan="2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Felis_catus-cat_on_snow.jpg/1200px-Felis_catus-cat_on_snow.jpg" width="50" height="50" alt="kot"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2" colspan="2">@</td>
+                    <td>E</td>
+                </tr>
+                <tr>
+                    <td>F</td><td>G</td><td>H</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>I</td>
+                    <td colspan="3">&lt;FOOTER&gt;</td>
+                    <td>J</td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </main>
+</body>
+</html>
